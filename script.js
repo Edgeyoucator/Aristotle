@@ -35,8 +35,8 @@ function addTouchListeners(item) {
   item.addEventListener('touchmove', e => {
     if (!draggedItem) return;
     const touch = e.touches[0];
-    item.style.left = `${touch.clientX - item.offsetWidth / 2}px`;
-    item.style.top = `${touch.clientY - item.offsetHeight / 2}px`;
+    item.style.left = `${touch.pageX - item.offsetWidth / 2}px`;
+    item.style.top = `${touch.pageY - item.offsetHeight / 2}px`;
     e.preventDefault();
   }, { passive: false });
 
