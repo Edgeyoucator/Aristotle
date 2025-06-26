@@ -108,3 +108,27 @@ p {
 .blur-background *:not(#splash-screen):not(script) {
   filter: blur(4px);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .draggable {
+    width: 60px;
+    height: 60px;
+  }
+
+  #element-grid th,
+  #element-grid td {
+    width: 60px;
+    height: 60px;
+  }
+
+  #element-grid img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
