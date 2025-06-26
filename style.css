@@ -28,7 +28,6 @@ p {
   margin-bottom: 2rem;
 }
 
-/* New layout: table and draggable items side by side */
 .interaction-area {
   display: flex;
   flex-direction: row;
@@ -45,12 +44,29 @@ p {
   flex-shrink: 0;
 }
 
-/* Draggable area style */
+.drag-grid-frame {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid #86dabd;
+  background-color: #1e2c44;
+  padding: 1rem;
+  width: 440px;
+  box-sizing: border-box;
+}
+
+.drag-grid-frame .drag-bank {
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
 .drag-bank {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2rem;
 }
 
 .draggable {
@@ -154,5 +170,10 @@ p {
   #element-grid img {
     max-width: 40px;
     max-height: 40px;
+  }
+
+  .drag-grid-frame {
+    width: 100%;
+    padding: 1rem;
   }
 }
