@@ -144,6 +144,12 @@ p {
   filter: blur(4px);
 }
 
+#button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; /* Add space between button and grids */
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .container {
