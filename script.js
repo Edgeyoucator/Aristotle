@@ -196,4 +196,5 @@ checkButton.style.padding = '0.5rem 1rem';
 checkButton.style.fontSize = '1rem';
 checkButton.style.cursor = 'pointer';
 checkButton.onclick = checkAnswers;
-document.querySelector('.container').appendChild(checkButton);
+const paragraph = document.querySelector('.container p');
+paragraph.insertAdjacentElement('afterend', checkButton);
