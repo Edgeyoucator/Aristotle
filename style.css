@@ -53,6 +53,10 @@ h1 {
   margin-top: 2rem;
 }
 
+#element-grid th:first-child {
+  font-size: 0.8rem; /* or whatever size works */
+}
+
 .drag-panel {
   border: 1px solid #86dabd;
   padding: 1rem;
