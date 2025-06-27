@@ -47,9 +47,18 @@ function addTouchListeners(item) {
     item.style.zIndex = '';
     item.style.left = '';
     item.style.top = '';
+
     const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    if (dropTarget === draggedItem) {
+      originalParent.appendChild(draggedItem);
+      draggedItem = null;
+      return;
+    }
+
     const zone = dropTarget && dropTarget.closest('.drop-zone, .drop-cell, .drag-bank');
-    if (zone) {
+
+    if (zone && zone !== originalParent) {
       if ((zone.classList.contains('drop-zone') || zone.classList.contains('drop-cell')) && zone.children.length > 0) {
         const existingItem = zone.firstElementChild;
         originalParent.appendChild(existingItem);
@@ -57,11 +66,12 @@ function addTouchListeners(item) {
         addTouchListeners(existingItem);
       }
       zone.appendChild(draggedItem);
-      addDragListeners(draggedItem);
-      addTouchListeners(draggedItem);
     } else {
       originalParent.appendChild(draggedItem);
     }
+
+    addDragListeners(draggedItem);
+    addTouchListeners(draggedItem);
     draggedItem = null;
   });
 }
